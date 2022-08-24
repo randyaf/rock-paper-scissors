@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+    justify-content: end;
+}
+
+.left-section {
+    flex: 1;
+    border: 1px solid blue;
+}
+.center-section {
+    display: flex;
+    flex-direction: column;
+    width: 100rem;
+    border: 1px solid yellow;
+}
+
+.game-top-display {
+    flex: 1;
+}
+
+.game-container {
+    display: flex;
+    width: 100rem;
+    height: 60rem;
+    background-color: green;
+}
+
+.left-player {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem;
+    background-color: yellow;
+}
+
+.right-player {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem;
+    background-color: orange;
+}
+
+.rock, .paper, .scissor {
+    flex: 1;
+    background-color: cyan;
+}
+
+
+
+.game-bottom-display {
+    flex: 1;
+}
+
+.right-section {
+    flex: 1;
+    border: 1px solid red;
+}
+
