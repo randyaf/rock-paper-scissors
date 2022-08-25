@@ -8,49 +8,23 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    background: rgb(74,231,233);
+    background: linear-gradient(51deg, rgba(74,231,233,1) 0%, rgba(255,0,211,1) 100%);
+}
+
 .main-container {
     display: flex;
     height: 100vh;
-    justify-content: end;
+    justify-content: center;
 }
 
-.left-section {
-    display:flex;
-    flex-direction: column;
-    flex: 1;
-    border: 1px solid blue;
-}
 
-.game-option-top {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.game-option-top button {
-    margin: 1rem;
-    padding: 1rem;
-}
-
-.game-info-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    flex: 1;
-    padding: 1rem;
-}
-
-.game-info-bottom button {
-    margin: 1rem;
-    padding: 1rem;
-}
 
 .center-section {
     display: flex;
     flex-direction: column;
     width: 100rem;
-    border: 1px solid yellow;
 }
 
 .game-top-display {
@@ -59,7 +33,6 @@ html {
     justify-content: center;
     align-items: center;
     flex: 1;
-    border: 1px solid red;
 }
 
 .game-top-display .game-title {
@@ -85,6 +58,9 @@ html {
     width: 100rem;
     height: 60rem;
     background-color: green;
+    border-radius: 2rem;
+    box-shadow: 0.2rem 0.2rem 2rem 1rem rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .left-player {
@@ -93,7 +69,9 @@ html {
     flex-direction: column;
     flex: 1;
     padding: 2rem;
-    background-color: yellow;
+    /* background-color: #ff00d3; */
+    background: rgb(240,204,234);
+    background: linear-gradient(247deg, rgba(240,204,234,1) 0%, rgba(255,0,211,1) 100%);
 }
 
 .right-player {
@@ -102,7 +80,15 @@ html {
     flex-direction: column;
     flex: 1;
     padding: 2rem;
-    background-color: orange;
+    /* background-color: #4ae7e9; */
+    background: rgb(108,243,245);
+    background: linear-gradient(82deg, rgba(108,243,245,1) 0%, rgba(44,184,186,1) 100%);
+}
+
+.selected {
+    color: green;
+    transform: scale(1.5);
+    transition: all 300ms linear;
 }
 
 .rock, .paper, .scissor {
@@ -110,7 +96,8 @@ html {
     justify-content: center;
     align-items: center;
     flex: 1;
-    background-color: cyan;
+    background-color: transparent;
+    transition: all 300ms linear;
 }
 
 .rock > i, .paper > i, .scissor > i {
@@ -123,7 +110,7 @@ html {
 
 .right-player i {
     transform: rotate(-90deg) scale(-1, 1);
-    color: red;
+    /* color: red; */
 }
 
 
@@ -159,32 +146,13 @@ html {
     font-size: 3rem;
     width: 15rem;
     height: 5rem;
+    border: 0;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    background: rgb(108,243,245);
+    background: linear-gradient(82deg, rgba(108,243,245,1) 0%, rgba(44,184,186,1) 100%);
 }
 
 
-.right-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    border: 1px solid red;
-}
 
-
-.right-section .game-status {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    font-size: 3rem;
-    padding: 1rem;
-}
-
-.right-section .game-history {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    padding: 1rem;
-    font-size: 3rem;
-}
 
