@@ -4,6 +4,7 @@
         <title>Rock Paper Scissors</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
     <body>
@@ -22,26 +23,42 @@
                </div>
            </div>
            <div class="center-section">
-               <div class="game-top-display">Player vs Computer</div>
+               <div class="game-top-display">
+                   <div class="game-title">
+                       <p>Rock Paper Scissor Game</p>
+                    </div>
+                   <div class="player-names">
+                       <p class="player">Payer</p>
+                       <p class="Computer">Computer</p>
+                   </div>
+                </div>
                <div class="game-container">
                    <div class="left-player">
-                       <div class="rock"></div>
-                       <div class="paper"></div>
-                       <div class="scissor"></div>
+                       <div class="rock"><i class="fas fa-hand-fist"></i></div>
+                       <div class="paper"> <i class="fas fa-hand"></i></div>
+                       <div class="scissor"><i class="fas fa-hand-peace"></i></div>
                    </div>
                    <div class="right-player">
-                       <div class="rock"></div>
-                       <div class="paper"></div>
-                       <div class="scissor"></div>
+                       <div class="rock"><i class="fas fa-hand-fist"></i></div>
+                       <div class="paper"> <i class="fas fa-hand"></i></div>
+                       <div class="scissor"><i class="fas fa-hand-peace"></i></div>
                    </div>
                </div>
-               <div class="game-bottom-display">3 : 5</div>
+               <div class="game-bottom-display">
+                   <p class="score-title">score</p>
+                   <div class="score-numbers">
+                       <p class="player-score">player score</p>
+                       <p class="computer-score">computer score</p>
+                   </div>
+                   <div class="button-container"><button class="play-button">play</button></div>
+                </div>
            </div>
            <div class="right-section">
                <div class="game-status">
                    <div class="round">round: 5</div>
                </div>
                <div class="game-history">
+                   <h3>History</h3>
                    <p>some history here</p>
                    <p>some history here</p>
                    <p>some history here</p>

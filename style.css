@@ -15,9 +15,37 @@ html {
 }
 
 .left-section {
+    display:flex;
+    flex-direction: column;
     flex: 1;
     border: 1px solid blue;
 }
+
+.game-option-top {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.game-option-top button {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.game-info-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex: 1;
+    padding: 1rem;
+}
+
+.game-info-bottom button {
+    margin: 1rem;
+    padding: 1rem;
+}
+
 .center-section {
     display: flex;
     flex-direction: column;
@@ -26,7 +54,30 @@ html {
 }
 
 .game-top-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    border: 1px solid red;
+}
+
+.game-top-display .game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    font-size: 5rem;
+    width: 100%;
+}
+
+.game-top-display .player-names {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    font-size: 3rem;
+    width: 100%;
 }
 
 .game-container {
@@ -55,18 +106,85 @@ html {
 }
 
 .rock, .paper, .scissor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     background-color: cyan;
 }
 
+.rock > i, .paper > i, .scissor > i {
+    font-size: 15rem;
+}
+
+.left-player i {
+    transform: rotate(90deg);
+}
+
+.right-player i {
+    transform: rotate(-90deg) scale(-1, 1);
+    color: red;
+}
 
 
 .game-bottom-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    font-size: 3rem;
+}
+
+.game-bottom-display .score-title {
     flex: 1;
 }
 
+.game-bottom-display .score-numbers {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.game-bottom-display .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    width: 100%;
+}
+
+.button-container .play-button {
+    font-size: 3rem;
+    width: 15rem;
+    height: 5rem;
+}
+
+
 .right-section {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     border: 1px solid red;
+}
+
+
+.right-section .game-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.right-section .game-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 1rem;
+    font-size: 3rem;
 }
 
