@@ -12,18 +12,18 @@ let lastComputerChoice = "";
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 const winStatus = document.querySelector(".win-status");
-
 const playButton = document.querySelector(".play-button");
+
 playButton.addEventListener("click", event => {
     if (currentRound >= 1 && currentRound <= maxRound) {
         canPlay = true;
         if (currentRound === 1) {
+            // reset display scores
             playerScoreDisplay.innerText = 0;
             computerScoreDisplay.innerText = 0;
 
             event.target.innerText = `round ${currentRound}`;
         }
-        // todo click event
         if (lastUserChoice !== "") {
             document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
         }
@@ -32,6 +32,7 @@ playButton.addEventListener("click", event => {
             document.querySelector(`.right-player .${lastComputerChoice}`).classList.remove("selected");
         }
 
+        // reset win-status
         winStatus.innerText = "";
     }
 })
@@ -42,10 +43,6 @@ playButton.addEventListener("click", event => {
 //const winStatus = document.querySelector(".win-status");
 const leftPlayer = document.querySelector(".left-player");
 
-
-
-
-
 leftPlayer.addEventListener("click", event => {
     if (canPlay && currentRound <= maxRound) {
 
@@ -53,14 +50,9 @@ leftPlayer.addEventListener("click", event => {
                 document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
         }
 
-
         if (event.target.closest(".rock") !== null 
         && event.target.closest(".rock").matches(".rock")) {
             userChoice = "rock";
-
-            // if (lastUserChoice !== "") {
-            //     document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
-            // }
 
             event.target.closest(".rock").classList.add("selected");
             lastUserChoice = "rock";
@@ -69,10 +61,6 @@ leftPlayer.addEventListener("click", event => {
         && event.target.closest(".paper").matches(".paper")) {
             userChoice = "paper";
 
-            // if (lastUserChoice !== "") {
-            //     document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
-            // }
-
             event.target.closest(".paper").classList.add("selected");
             lastUserChoice = "paper";
             console.info(userChoice);
@@ -80,20 +68,12 @@ leftPlayer.addEventListener("click", event => {
         && event.target.closest(".scissor").matches(".scissor")) {
             userChoice = "scissor";
 
-            // if (lastUserChoice !== "") {
-            //     document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
-            // }
-
             event.target.closest(".scissor").classList.add("selected");
             lastUserChoice = "scissor";
             console.info(userChoice);
         }
 
-        //todo set result status
         // remove selected style from last selected element by computer
-        // for user
-
-
         if (lastComputerChoice !== "") {
             let tempLastSelectedElement = document.querySelector(`.right-player .${lastComputerChoice}`);
             tempLastSelectedElement.classList.remove("selected");
@@ -105,8 +85,6 @@ leftPlayer.addEventListener("click", event => {
         document.querySelector(`.right-player .${computerChoice}`).classList.add("selected");
         lastComputerChoice = computerChoice;
 
-        
-
         if (tempWinStatus === "win") playerScoreDisplay.innerText++;
         else if (tempWinStatus === "lose") computerScoreDisplay.innerText++;
 
@@ -115,6 +93,8 @@ leftPlayer.addEventListener("click", event => {
         document.querySelector(".play-button").innerText = `round ${currentRound+1}`;
 
         currentRound++;
+
+        // add logic when last round if completed
         if (currentRound === maxRound + 1) {
             console.log("debug: " + currentRound);
             document.querySelector(".play-button").innerText = "play again";
@@ -132,7 +112,6 @@ leftPlayer.addEventListener("click", event => {
 })
 
 // computer auto generate rock or paper or scissor
-
 function generateComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -140,8 +119,8 @@ function generateComputerChoice() {
     else if (randomNumber === 2) return "paper";
     else if (randomNumber === 3) return "scissor";
 }
-// compare both and select the winner
 
+// compare both and select the winner
 function compareUserAndComputer(userChoice, computerChoice) {
     if (userChoice === "rock") {
         if (computerChoice === "scissor") return "win";
@@ -157,8 +136,3 @@ function compareUserAndComputer(userChoice, computerChoice) {
         else return "draw";
     }
 }
-// repeat to step 2
-
-
-// when round reach 5, count the total and select the winner with biggest score
-// if player win display "user win", else display "user lose"
