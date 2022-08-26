@@ -6,21 +6,37 @@ let maxRound = 10;
 let userChoice = "";
 let canPlay = false;
 let gameStatistic = [];
+let lastUserChoice = "";
+let lastComputerChoice = "";
 
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
+const winStatus = document.querySelector(".win-status");
 
 const playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", event => {
-    if (currentRound >= 1 && currentRound < maxRound) {
+    if (currentRound >= 1 && currentRound <= maxRound) {
         canPlay = true;
         if (currentRound === 1) {
             playerScoreDisplay.innerText = 0;
             computerScoreDisplay.innerText = 0;
+
+            event.target.innerText = `round ${currentRound}`;
         }
         // todo click event
+        if (lastUserChoice !== "") {
+            document.querySelector(`.left-player .${lastUserChoice}`).classList.remove("selected");
+        }
+
+        if (lastComputerChoice !== "") {
+            document.querySelector(`.right-player .${lastComputerChoice}`).classList.remove("selected");
+        }
+
+        winStatus.innerText = "";
     }
 })
+
+
 // user choosing rock or paper or scissor
 
 //const winStatus = document.querySelector(".win-status");
@@ -28,8 +44,7 @@ const leftPlayer = document.querySelector(".left-player");
 
 
 
-let lastUserChoice = "";
-let lastComputerChoice = "";
+
 
 leftPlayer.addEventListener("click", event => {
     if (canPlay && currentRound <= maxRound) {
@@ -87,7 +102,6 @@ leftPlayer.addEventListener("click", event => {
         let tempWinStatus = compareUserAndComputer(userChoice, computerChoice);
 
         gameStatistic.push(tempWinStatus);
-        //winStatus.innerText = `You ${tempWinStatus}`;
         document.querySelector(`.right-player .${computerChoice}`).classList.add("selected");
         lastComputerChoice = computerChoice;
 
@@ -98,10 +112,21 @@ leftPlayer.addEventListener("click", event => {
 
         console.log(currentRound);
 
+        document.querySelector(".play-button").innerText = `round ${currentRound+1}`;
+
         currentRound++;
         if (currentRound === maxRound + 1) {
+            console.log("debug: " + currentRound);
+            document.querySelector(".play-button").innerText = "play again";
             canPlay = false;
             currentRound = 1;
+            if (playerScoreDisplay.innerText > computerScoreDisplay.innerText) {
+                winStatus.innerText = "You win";
+            } else if (playerScoreDisplay.innerText < computerScoreDisplay.innerText) {
+                winStatus.innerText = "You lose";
+            } else {
+                winStatus.innerText = "Draw";
+            }
         }
     }
 })

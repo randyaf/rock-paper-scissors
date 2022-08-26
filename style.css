@@ -85,6 +85,10 @@ body {
     background: linear-gradient(82deg, rgba(108,243,245,1) 0%, rgba(44,184,186,1) 100%);
 }
 
+.left-player .rock, .left-player .paper, .left-player .scissor {
+    z-index: 1;
+}
+
 .selected {
     color: green;
     transform: scale(1.5);
@@ -127,12 +131,20 @@ body {
     flex: 1;
 }
 
+.game-bottom-display .win-status {
+    font-size: 3rem;
+    width: 15rem;
+    text-align: center;
+}
+
 .game-bottom-display .score-numbers {
     display: flex;
     flex: 1;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
 }
+
+
 
 .game-bottom-display .button-container{
     display: flex;
@@ -152,6 +164,8 @@ body {
     background: rgb(108,243,245);
     background: linear-gradient(82deg, rgba(108,243,245,1) 0%, rgba(44,184,186,1) 100%);
 }
+
+
 
 
 
